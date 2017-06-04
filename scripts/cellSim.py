@@ -16,30 +16,21 @@ wind0w = [260, 260]
 class livingCell:
     def __init__(self):
         pass
-
-
 class deadCell:
     def __init__(self):
         pass
-
-
 class multiCell:
-
     def __init__(self):
         pass
 
-
 def cellStart():
-
     # Create random cords
     grid = []
     for row in range(10):
         grid.append([randint(0, 10)*5])
         for column in range(10):
             grid[row].append(randint(0, 10))
-
-
-    # n = input('how many Cells to Start with? : ')
+    
     pygame.init()
     clock = pygame.time.Clock()  # adjust how fast screen updates
     screen = pygame.display.set_mode(wind0w)
@@ -53,9 +44,11 @@ def cellStart():
     while not done:
 
         for event in pygame.event.get():
+            
             if event.type == pygame.QUIT:
                 done = True
                 # exit loop
+            
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 #### random cells on mouse click
                 pos = pygame.mouse.get_pos()
@@ -69,8 +62,11 @@ def cellStart():
                 screen.fill(black)
                 pygame.display.update()
                 # Draw Grid
+                
                 for row in range(10):
+                    
                     for column in range(10):
+                        
                         if grid[row][column] == 1:
                             color = green
                             pygame.draw.rect(screen,
@@ -80,6 +76,7 @@ def cellStart():
                                               width,
                                               height])
                             pygame.display.update()
+                        
                         elif grid[row][column] != 1 :
                             color = red
                             pygame.draw.rect(screen,
@@ -90,9 +87,9 @@ def cellStart():
                                               height])
                             color = red
                             pygame.display.update()
+                        
                         else:
                             pygame.quit()
                             sys.exit()
-
-
+                            
 cellStart()
