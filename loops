@@ -1,0 +1,90 @@
+public class Main {
+
+    public static void main(String[] args) {
+
+        int value = 1;
+        if (value == 1) {
+            System.out.println("value is 1");
+        }else if (value ==2) {
+            System.out.println("value is 2");
+        }else {
+            System.out.println("is not 1 or 2");
+        }
+
+        System.out.println("***********************");
+
+        for (int i = 0; i < 7; i++) {
+            switch (i) {
+                case 0:
+                    System.out.println("was 0");
+                case 1:
+                    System.out.println("value was 1");
+                    break;
+                case 2:
+                    System.out.println("value was 2");
+                    break;
+                case 3:
+                case 4:
+                case 5:
+                    System.out.println("was a 3, 4, 5");
+                    break;
+                default:
+                    System.out.println("was not 0, 1, 2, 3, 4, 5");
+                    break;
+            }
+        }
+
+        System.out.println("***********************");
+        int count = 0;
+        for (int i = 10; i <= 50; i++) {
+            if (isPrime(i)) {
+                count++;
+                System.out.println("number " + i + " is a prime number");
+                if(count == 3){
+                    System.out.println("Reached maxed number of loops");
+                    break;
+                }
+            }else {
+                System.out.println("is not a prime number");
+            }
+        }
+        System.out.println("***********************");
+        int counter = 1;
+        int isEvenNumber = 1;
+        for (int i = 1; i <= 500; i++) {
+            if (isEven(i)) {
+                counter++;
+                System.out.println("number " + i + " is an even number");
+                if (counter == 15) {
+                    System.out.println("Reached maxed number of loops");
+                    break;
+                    //System.out.println("You found " + isEvenNumber + " even numbers!!");
+
+                }isEvenNumber++;
+            }
+        }System.out.println("total number of even numbers " + isEvenNumber);
+    }
+
+
+    public static boolean isPrime(int n) {
+        if (n == 1) {
+
+            return false;
+        }
+        for (int i = 2; i <= (long) Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static boolean isEven(int number){
+        if ((number % 2) == 0){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+}
