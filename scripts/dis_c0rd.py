@@ -12,7 +12,6 @@ USER = ''
 PASSWORD = ''
 DB = ''
 PORT = 3306
-#connection = pymysql.connect(host=HOST, user=USER, password=PASSWORD, db=DB, port=PORT)
 Bot.remove_command(client, "help")
 
 def connect():
